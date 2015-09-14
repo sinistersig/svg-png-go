@@ -1,9 +1,11 @@
 package main
 
-import "fmt"
-import "os"
-import "github.com/rogpeppe/misc/svg"
-import "image"
+import (
+	"fmt"
+	"os"
+	"image"
+	"github.com/rogpeppe/misc/svg"
+)
 
 func example() (val string, err error){
 	val = "test string";
