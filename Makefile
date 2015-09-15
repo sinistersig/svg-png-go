@@ -1,6 +1,6 @@
-IMG=receiptful-test
-OUTPUT_DIR=/tmp/$(IMG)
-DOCKER_RUN_CMD=docker run --rm -it -v $(OUTPUT_DIR) $(IMG)
+IMG=svg-png
+OUTPUT_DIR=/Users/sigi
+DOCKER_RUN_CMD=docker run --rm -it -v $(OUTPUT_DIR):/home $(IMG)
 
 docker-pull:
 	docker pull sinistersig/alpine-go:latest
