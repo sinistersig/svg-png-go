@@ -2,33 +2,35 @@ package main
 
 import (
 	"fmt"
-	"os"
-	"image"
-	"github.com/rogpeppe/misc/svg"
 	"github.com/llgcode/draw2d/draw2dimg"
+	"github.com/rogpeppe/misc/svg"
+	"image"
+	"os"
 )
 
+func check(e error) {
+	if e != nil {
+		panic(e)
+	}
+}
 
 func main() {
 
-	file, err := os.Open("img/test.svg");
+	file, err := os.Open("img/test.svg")
 
-	size := image.Point{1000,1000};
+	check(err)
 
-	if err != nil {
-		panic(err);
-	}
+	defer file.Close()
 
+	size := image.Point{1000, 1000}
 
-	dest, err := svg.Render(file, size);
+	dest, err := svg.Render(file, size)
 
-	if err != nil {
-		panic(err);
-	}
+	check(err)
 
-	draw2dimg.SaveToPngFile("/home/test.png", dest);
+	err = draw2dimg.SaveToPngFile("/home/test.png", dest)
 
-	file.Close();
+	check(err)
 
-	fmt.Println("done");
+	fmt.Println("done")
 }
