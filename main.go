@@ -8,11 +8,6 @@ import (
 	"github.com/llgcode/draw2d/draw2dimg"
 )
 
-func example() (val string, err error){
-	val = "test string";
-
-	return
-}
 
 func main() {
 
